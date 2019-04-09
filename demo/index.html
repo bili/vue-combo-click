@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>vue-combo demo</title>
+    <title>vue-combo-click demo</title>
     <style>
         html,
         body {
@@ -45,29 +45,7 @@
     <div id="app" v-combo-click="options">
         <div class="box" :style="{marginLeft: count*9+'%'}"></div>
     </div>
-    <script src="vue.min.js"></script>
-    <script src="../src/vue-combo-click.js"></script>
-    <script>
-        let app = new Vue({
-            el: '#app',
-            data: {
-                count: 0,
-                options: {
-                    count: 10,
-                    delay: 500,
-                    change(count) {
-                        app.count = count
-                        if (count === 0) {
-                            app.$el.querySelector('.box').classList.remove('finish')
-                        }
-                    },
-                    finish(count) {
-                        app.$el.querySelector('.box').classList.add('finish')
-                    },
-                }
-            }
-        })
-    </script>
+    <script src="../dist/index.min.js"></script>
 </body>
 
 </html>
