@@ -1,0 +1,17 @@
+{
+  "name": "vue-combo-click",
+  "version": "1.0.0",
+  "description": "A simple vue directive that count the combo-clicking times.",
+  "main": "vue-combo-click.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "click",
+    "combo",
+    "vue",
+    "count"
+  ],
+  "author": "bilipan",
+  "license": "ISC"
+}

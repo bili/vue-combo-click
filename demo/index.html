@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-combo demo</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #app {
+            width: 100%;
+            background: lightgoldenrodyellow;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .box {
+            width: 10%;
+            height: 100px;
+            background: lightgreen;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            color: green;
+            user-select: none;
+            transition: all 0.3s;
+            border-radius: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .finish {
+            background: lightcoral !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-combo-click="options">
+        <div class="box" :style="{marginLeft: count*9+'%'}"></div>
+    </div>
+    <script src="vue.min.js"></script>
+    <script src="../src/vue-combo-click.js"></script>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                options: {
+                    count: 10,
+                    delay: 500,
+                    change(count) {
+                        app.count = count
+                        if (count === 0) {
+                            app.$el.querySelector('.box').classList.remove('finish')
+                        }
+                    },
+                    finish(count) {
+                        app.$el.querySelector('.box').classList.add('finish')
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
