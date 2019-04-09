@@ -9,7 +9,7 @@ let app = new Vue({
         count: 0,
         options: {
             count: 10,
-            delay: 500,
+            delay: 200,
             change(count) {
                 app.count = count
                 if (count === 0) {
