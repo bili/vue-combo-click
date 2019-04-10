@@ -12,20 +12,22 @@ import VueComboClick from 'vue-combo-click'
 
 Vue.use(VueComboClick)
 
-let app = new Vue({
-    el: '#app',
-    data: {
-        count: 0,
-        options: {
-            count: 10,
-            delay: 200,
-            change(count) {
-                console.log(count)
-            },
-            finish(count) {
-                console.log(count)
-            },
+export default {
+    data() {
+        return {
+            count: 0,
+            options: {
+                count: 10,
+                delay: 200,
+                reset: false,
+                change(count) {
+                    console.log(count)
+                },
+                finish(count) {
+                    console.log(`combo`)
+                }
+            }
         }
     }
-})
+}
 ```
